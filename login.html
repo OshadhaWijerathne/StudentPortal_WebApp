@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Student Portal</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="register.html" class="nav-link">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link active">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.php" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="form-container">
+            <h2>Welcome Back</h2>
+            <p class="text-center" style="color: var(--text-secondary); margin-bottom: 2rem;">
+                Sign in to access your student dashboard
+            </p>
+            
+            <form id="loginForm" action="php/login.php" method="POST">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    <div class="form-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" required placeholder="Enter your password">
+                        <button type="button" class="password-toggle">👁️</button>
+                    </div>
+                    <div class="form-error"></div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="checkbox" id="remember" name="remember" style="width: auto;">
+                        <label for="remember" style="margin-bottom: 0; font-weight: normal; color: var(--text-secondary);">
+                            Remember me
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">
+                    Sign In
+                </button>
+            </form>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="#" style="color: var(--primary-color); text-decoration: none; font-size: 0.9rem;">
+                    Forgot your password?
+                </a>
+            </div>
+
+            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Don't have an account yet?
+                </p>
+                <a href="register.html" class="btn btn-secondary" style="width: 100%;">
+                    Create Account
+                </a>
+            </div>
+
+            <!-- Demo Credentials Info -->
+            <div style="margin-top: 2rem; padding: 1rem; background-color: rgba(79, 70, 229, 0.1); border-radius: var(--border-radius); border: 1px solid rgba(79, 70, 229, 0.2);">
+                <h4 style="color: var(--primary-color); margin-bottom: 0.5rem; font-size: 0.9rem;">Demo Credentials:</h4>
+                <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;">
+                    <strong>Email:</strong> demo@student.com<br>
+                    <strong>Password:</strong> demo123456
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login Successful!</h3>
+                <button class="close">&times;</button>
+            </div>
+            <div class="modal-body">
+                Welcome back! You are being redirected to your profile.
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Student Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
