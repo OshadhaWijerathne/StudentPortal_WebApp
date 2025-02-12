@@ -383,7 +383,7 @@ body {
     border-color: var(--success-color);
 }
 
-/* Rating System */
+/* --- Rating System --- */
 .rating-container {
     display: flex;
     gap: 0.5rem;
@@ -392,15 +392,21 @@ body {
 
 .star {
     font-size: 1.5rem;
-    color: var(--border-color);
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.2s ease-in-out;
+    /* Use filter to make the star gray by default */
+    filter: grayscale(100%);
+    opacity: 0.6;
 }
 
 .star.active,
 .star:hover {
-    color: var(--accent-color);
+    /* Restore full color and opacity on hover/selection */
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1); /* Optional: adds a nice pop effect */
 }
+
 
 /* Profile Page */
 .profile-container {

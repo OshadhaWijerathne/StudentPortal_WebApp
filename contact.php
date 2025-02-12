@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Colombo'); 
 session_start();
 
 // Check if user is logged in
@@ -219,21 +220,5 @@ $user_data = $_SESSION['user_data'] ?? [];
     </footer>
 
     <script src="js/script.js"></script>
-    <script>
-        // Update the rating input when stars are clicked
-        document.addEventListener('DOMContentLoaded', function() {
-            const stars = document.querySelectorAll('.star');
-            const ratingInput = document.getElementById('rating');
-            
-            stars.forEach((star, index) => {
-                star.addEventListener('click', function() {
-                    const rating = index + 1;
-                    ratingInput.value = rating;
-                    currentRating = rating;
-                    updateStarDisplay();
-                });
-            });
-        });
-    </script>
 </body>
 </html>

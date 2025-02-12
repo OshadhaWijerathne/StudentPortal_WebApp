@@ -263,7 +263,7 @@ function initializeRating() {
     stars.forEach((star, index) => {
         star.addEventListener('click', () => {
             currentRating = index + 1;
-            document.getElementById('ratingInput').value = currentRating; // Hidden input to send rating
+            document.getElementById('rating').value = currentRating; 
             updateStarDisplay();
         });
         star.addEventListener('mouseenter', () => highlightStars(index + 1));
@@ -284,6 +284,6 @@ function updateStarDisplay() {
 
 function resetRating() {
     currentRating = 0;
-    if(document.getElementById('ratingInput')) document.getElementById('ratingInput').value = 0;
+    if(document.getElementById('rating')) document.getElementById('rating').value = 0;
     updateStarDisplay();
 }
