@@ -94,6 +94,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Login successful
             $_SESSION['user_logged_in'] = true;
             $_SESSION['user_data'] = $user;
+
+            // This saves the email to the session for other scripts to use.
+            $_SESSION['user_email'] = $user['email'];
             
             // Update last login (except for demo user)
             if ($email !== 'demo@student.com') {

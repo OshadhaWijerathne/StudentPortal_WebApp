@@ -1,0 +1,1 @@
+{"fullName":"Amila Oshadha","email":"amilaoshadhawijerathne@gmail.com","password":"$2y$10$lgQj5JhZbBn9IQTfEJpcSuWLSZy18BYIu.k3vpk1rnmsoctdzYr0.","dob":"2025-07-02","gender":"male","phone":"0719542711","address":"112\/1\r\nkathuruwaththa","registration_date":"2025-07-27 04:12:17","last_login":"2025-07-27 04:31:45"}
