@@ -225,31 +225,65 @@ function initializePasswordToggle() {
         });
     });
 }
-function showAlert(message, type = 'info') {
-    const alertContainer = document.getElementById('alertContainer');
+// function showAlert(message, type = 'info') {
+//     const alertContainer = document.getElementById('alertContainer');
     
+//     if (!alertContainer) {
+//         // Create alert container if it doesn't exist
+//         const container = document.createElement('div');
+//         container.id = 'alertContainer';
+//         container.style.position = 'fixed';
+//         container.style.top = '20px';
+//         container.style.right = '20px';
+//         container.style.zIndex = '3000';
+//         container.style.maxWidth = '400px';
+//         document.body.appendChild(container);
+//     }
+    
+//     const alert = document.createElement('div');
+//     alert.className = `alert alert-${type} show`;
+//     alert.textContent = message;
+    
+//     const container = document.getElementById('alertContainer');
+//     container.appendChild(alert);
+    
+//     // Auto remove after 5 seconds
+//     setTimeout(() => {
+//         alert.remove();
+//     }, 5000);
+// }
+
+function showAlert(message, type = 'info') {
+    // Get or create the main container for alerts
+    let alertContainer = document.getElementById('alertContainer');
     if (!alertContainer) {
-        // Create alert container if it doesn't exist
-        const container = document.createElement('div');
-        container.id = 'alertContainer';
-        container.style.position = 'fixed';
-        container.style.top = '20px';
-        container.style.right = '20px';
-        container.style.zIndex = '3000';
-        container.style.maxWidth = '400px';
-        document.body.appendChild(container);
+        alertContainer = document.createElement('div');
+        alertContainer.id = 'alertContainer';
+        document.body.appendChild(alertContainer);
     }
     
+    // Create the new alert element
     const alert = document.createElement('div');
-    alert.className = `alert alert-${type} show`;
+    alert.className = `alert alert-${type}`; // Initially created without 'show'
     alert.textContent = message;
     
-    const container = document.getElementById('alertContainer');
-    container.appendChild(alert);
+    // Add the alert to the container
+    alertContainer.appendChild(alert);
     
-    // Auto remove after 5 seconds
+    // Trigger the 'show' transition
+    // A small timeout allows the element to be rendered before adding the class
     setTimeout(() => {
-        alert.remove();
+        alert.classList.add('show');
+    }, 10); 
+    
+    // Set a timeout to remove the alert
+    setTimeout(() => {
+        alert.classList.remove('show'); // Trigger fade-out transition
+        
+        // Wait for the transition to finish before removing the element
+        alert.addEventListener('transitionend', () => {
+            alert.remove();
+        });
     }, 5000);
 }
 

@@ -173,6 +173,7 @@ $user_data = $_SESSION['user_data'] ?? [];
 
     <div id="editModal" class="modal"><div class="modal-content"><div class="modal-header"><h3>Edit Profile</h3><button class="close" onclick="closeModal('editModal')">&times;</button></div><div class="modal-body"><p>Profile editing functionality requires a dedicated PHP script to handle updates. This is a placeholder.</p></div></div></div>
     <!-- <div id="passwordModal" class="modal"><div class="modal-content"><div class="modal-header"><h3>Change Password</h3><button class="close" onclick="closeModal('passwordModal')">&times;</button></div><div class="modal-body"><form id="changePasswordForm"><div class="form-group"><label for="currentPassword">Current Password</label><input type="password" id="currentPassword" name="currentPassword" required></div><div class="form-group"><label for="newPassword">New Password</label><input type="password" id="newPassword" name="newPassword" required></div><div class="form-group"><label for="confirmNewPassword">Confirm New Password</label><input type="password" id="confirmNewPassword" name="confirmNewPassword" required></div><div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1rem;"><button type="button" class="btn btn-secondary" onclick="closeModal('passwordModal')">Cancel</button><button type="submit" class="btn btn-primary">Update Password</button></div></form></div></div></div> -->
+     <!-- Password Change Modal -->
     <div id="passwordModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -183,16 +184,28 @@ $user_data = $_SESSION['user_data'] ?? [];
                 <form id="changePasswordForm" action="php/change_password.php" method="POST">
                     <div class="form-group">
                         <label for="currentPassword">Current Password</label>
-                        <input type="password" id="currentPassword" name="currentPassword" required>
+                        <div class="password-container">
+                            <input type="password" id="currentPassword" name="currentPassword" required placeholder="Enter current password">
+                            <button type="button" class="password-toggle">👁️</button>
+                        </div>
                     </div>
+
                     <div class="form-group">
                         <label for="newPassword">New Password</label>
-                        <input type="password" id="newPassword" name="newPassword" required>
+                        <div class="password-container">
+                            <input type="password" id="newPassword" name="newPassword" required placeholder="Enter new password">
+                            <button type="button" class="password-toggle">👁️</button>
+                        </div>
                     </div>
+
                     <div class="form-group">
                         <label for="confirmNewPassword">Confirm New Password</label>
-                        <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
+                        <div class="password-container">
+                            <input type="password" id="confirmNewPassword" name="confirmNewPassword" required placeholder="Confirm new password">
+                            <button type="button" class="password-toggle">👁️</button>
+                        </div>
                     </div>
+
                     <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1rem;">
                         <button type="button" class="btn btn-secondary" onclick="closeModal('passwordModal')">Cancel</button>
                         <button type="submit" class="btn btn-primary">Update Password</button>
@@ -201,6 +214,7 @@ $user_data = $_SESSION['user_data'] ?? [];
             </div>
         </div>
     </div>
+
 
     <footer class="footer">
         <div class="container">

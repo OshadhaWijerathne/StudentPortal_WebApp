@@ -736,3 +736,59 @@ body {
 .gap-1 { gap: 0.25rem; }
 .gap-2 { gap: 0.5rem; }
 .gap-3 { gap: 1rem; }
+
+/* Alert Container */
+#alertContainer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 3000;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds space between multiple alerts */
+}
+
+/* Base Alert Styling */
+.alert {
+    padding: 15px;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    font-family: sans-serif;
+    opacity: 0; /* Start hidden for fade-in effect */
+    transform: translateX(100%); /* Start off-screen */
+    transition: opacity 0.5s, transform 0.5s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Visibility Class */
+.alert.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Alert Types (Colors) */
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
