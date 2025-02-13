@@ -191,7 +191,10 @@ async function handleFormSubmit(e) {
         if (response.ok) {
             showAlert(result.message);
             if (result.redirect) {
-                window.location.href = result.redirect;
+                // Wait 1 seconds (2000 milliseconds) before redirecting
+                setTimeout(() => {
+                    window.location.href = result.redirect;
+                }, 800); 
             } else {
                 form.reset();
                 // Clear all success states from fields
